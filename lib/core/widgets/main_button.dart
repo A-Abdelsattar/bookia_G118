@@ -6,19 +6,27 @@ import '../theming/styles.dart';
 
 class MainButton extends StatelessWidget {
   final String title;
-  const MainButton({super.key, required this.title});
+  final void Function()? onTap;
+  const MainButton({super.key, required this.title, this.onTap});
 
   @override
   Widget build(BuildContext context) {
-    return             Container(
-      width: 331,
-      height: 56,
-      alignment: Alignment.center,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8),
-        color: AppColors.primary,
+    return             Material(
+      borderRadius: BorderRadius.circular(8),
+      color: AppColors.primary,
+      clipBehavior: Clip.antiAlias,
+      child: InkWell(
+        onTap: onTap,
+        child: Container(
+          width: 331,
+          height: 56,
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(8),
+          ),
+          child: Text(title,style: font15RegularWhite,),
+        ),
       ),
-      child: Text(title,style: font15RegularWhite,),
     )
     ;
   }
