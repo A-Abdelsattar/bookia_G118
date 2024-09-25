@@ -19,7 +19,7 @@ class AppBackButton extends StatelessWidget {
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12), border: Border.all(color: AppColors.border)),
         child: Center(
-          child:SvgPicture.asset(
+          child: SvgPicture.asset(
             "assets/images/arrow_back.svg",
             width: 26,
             height: 26,

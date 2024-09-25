@@ -23,11 +23,16 @@ TextStyle font15RegularWhite = const TextStyle(
 TextStyle font15RegularGray =  const TextStyle(
   fontSize: 15,
   fontWeight: FontWeightHelper.regular,
-  color: AppColors.dark
+  color: AppColors.gray
 );
 
 TextStyle font14RegularDarkGray =  const TextStyle(
   fontSize: 14,
   fontWeight: FontWeightHelper.regular,
+  color: AppColors.gray
+);
+TextStyle font22BoldDark=  const TextStyle(
+  fontSize: 22,
+  fontWeight: FontWeightHelper.bold,
   color: AppColors.dark
 );

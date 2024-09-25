@@ -25,7 +25,7 @@ class CenteredTextDivider extends StatelessWidget {
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 9.0),
-          child: Text(text,style: font14RegularDarkGray,),
+          child: Text(text,style: font14RegularDarkGray.copyWith(color: AppColors.darkGray),),
         ),
         Expanded(
           child: Divider(
