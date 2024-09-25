@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import '../theming/app_colors.dart';
 import '../theming/styles.dart';
 
-
 class MainButton extends StatelessWidget {
   final String title;
   final void Function()? onTap;
@@ -11,7 +10,7 @@ class MainButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return             Material(
+    return Material(
       borderRadius: BorderRadius.circular(8),
       color: AppColors.primary,
       clipBehavior: Clip.antiAlias,
@@ -24,10 +23,12 @@ class MainButton extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8),
           ),
-          child: Text(title,style: font15RegularWhite,),
+          child: Text(
+            title,
+            style: font15RegularWhite,
+          ),
         ),
       ),
-    )
-    ;
+    );
   }
 }
