@@ -9,14 +9,11 @@ import 'package:bookia_118/core/widgets/main_button.dart';
 import 'package:bookia_118/core/widgets/reusable_rich_text.dart';
 import 'package:bookia_118/core/widgets/reusable_text_form_field.dart';
 import 'package:bookia_118/core/widgets/social_auth.dart';
-import 'package:bookia_118/feature/otp_verification/presentation/screens/otp_verification.dart';
-import 'package:bookia_118/feature/register/presentation/screens/register_screen.dart';
+import 'package:bookia_118/feature/login/presentation/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 
-import '../../../forgot_password/presentation/screens/forgot_password.dart';
-
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class RegisterScreen extends StatelessWidget {
+  const RegisterScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -35,58 +32,65 @@ class LoginScreen extends StatelessWidget {
                 const AppBackButton(),
                 const SizedBox(height: 29),
                 SizedBox(
-                  width: 280,
-                  height: 82, // it's 78 in figma but it doesn't fit.
-                  child: Text(AppString.loginWelcomeMessage, style: font30RegularDark),
+                  width: 331,
+                  height: 78, // it's 78 in figma but it doesn't fit.
+                  child: Text(AppString.registerWelcomeMessage, style: font30RegularDark),
                 ),
                 const SizedBox(
                   height: 32,
+                ),
+                ///-------the user name field-------->
+                const ReusableTextFormField(
+                  keyboardType: TextInputType.text,
+                  obscureText: false,
+                  hintText: "",
+                  labelText: AppString.userName,
+                ),
+                const SizedBox(
+                  height: 12,
                 ),
                 ///-------the email field-------->
                 const ReusableTextFormField(
                   keyboardType: TextInputType.text,
                   obscureText: false,
                   hintText: "",
-                  labelText: AppString.enterYourEmail,
+                  labelText: AppString.email,
                 ),
                 const SizedBox(
                   height: 12,
                 ),
                 ///-------the password field-------->
-                ReusableTextFormField(
+                const ReusableTextFormField(
                   keyboardType: TextInputType.text,
                   obscureText: true,
                   hintText: "",
-                  labelText: AppString.enterYourPassword,
-                  suffixIcon: IconButton(
-                    onPressed: () {},
-                    icon: const Icon(Icons.remove_red_eye),
-                  ),
+                  labelText: AppString.password,
                 ),
-                Align(
-                  alignment: Alignment.topRight,
-                  child: TextButton(
-                    onPressed: () {push(context, ForgotPassword());},
-                    child: Text(
-                      AppString.forgotPassword,
-                      style: font14RegularDarkGray,
-                    ),
-                  ),
+                const SizedBox(
+                  height: 12,
+                ),
+                ///-------the confirm password field-------->
+                const ReusableTextFormField(
+                  keyboardType: TextInputType.text,
+                  obscureText: true,
+                  hintText: "",
+                  labelText: AppString.confirmPassword,
                 ),
                 const SizedBox(
                   height: 30,
                 ),
-                ///-------the login button-------->
+
                 MainButton(
-                    onTap: () { push(context, OtpVerification());},
-                    title: AppString.login),
+                    onTap: () {
+                      push(context, const LoginScreen());
+                    },
+                    title: AppString.register),
                 const SizedBox(
-                  height: 34,
+                  height: 35,
                 ),
-                ///-------the other methods to log in -------->
                 const CenteredTextDivider(
                   color: AppColors.border,
-                  text: AppString.orLogInWith,
+                  text: AppString.orRegisterWith,
                   thickness: 2,
                 ),
                 const SizedBox(
@@ -112,13 +116,13 @@ class LoginScreen extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(
-                  height: 140,
+                  height: 54,
                 ),
                 ReusableRichText(
-                  text1: AppString.doNotHaveAnAccount,
-                  text2: AppString.registerNow,
+                  text1: AppString.alreadyHaveAnAccount,
+                  text2: AppString.loginNow ,
                   onPressed: () {
-                    push(context, const RegisterScreen());
+                    push(context, const LoginScreen());
                   },
                 )
               ],

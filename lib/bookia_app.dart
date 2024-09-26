@@ -1,7 +1,6 @@
-import 'package:bookia_118/feature/splash/presentation/splash_screen.dart';
 import 'package:flutter/material.dart';
-
 import 'core/theming/theming.dart';
+import 'feature/on_boarding/presentation/on_boarding_screen.dart';
 
 
 class BookiaApp extends StatelessWidget {
